@@ -11,6 +11,7 @@
 		DA278BA428747A070077956C /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = DA278BA328747A070077956C /* FirebaseAuth */; };
 		DA278BA628747A070077956C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DA278BA528747A070077956C /* FirebaseFirestore */; };
 		DA278BA828747CC30077956C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA278BA728747CC20077956C /* GoogleService-Info.plist */; };
+		DA278BAA287480930077956C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA278BA9287480930077956C /* RegistrationView.swift */; };
 		DA6E862C287284B300094C87 /* IMSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E862B287284B300094C87 /* IMSApp.swift */; };
 		DA6E862E287284B300094C87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E862D287284B300094C87 /* ContentView.swift */; };
 		DA6E8630287284B300094C87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6E862F287284B300094C87 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		DA278BA728747CC20077956C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DA278BA9287480930077956C /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		DA6E8628287284B300094C87 /* IMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6E862B287284B300094C87 /* IMSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMSApp.swift; sourceTree = "<group>"; };
 		DA6E862D287284B300094C87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,7 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				DA6E862B287284B300094C87 /* IMSApp.swift */,
-				DACDD36228745E15005B083B /* Firestore */,
+				DACDD36228745E15005B083B /* FirebaseAuth */,
 				DACDD3652874620B005B083B /* ViewModels */,
 				DACDD36128745DFB005B083B /* Models */,
 				DACDD31028730155005B083B /* Views */,
@@ -108,6 +110,7 @@
 				DACDD311287301CA005B083B /* AddDeviceView.swift */,
 				DACDD313287301E1005B083B /* RemoveDeviceView.swift */,
 				DACDD31528730206005B083B /* CheckoutDeviceView.swift */,
+				DA278BA9287480930077956C /* RegistrationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -120,11 +123,11 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		DACDD36228745E15005B083B /* Firestore */ = {
+		DACDD36228745E15005B083B /* FirebaseAuth */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Firestore;
+			path = FirebaseAuth;
 			sourceTree = "<group>";
 		};
 		DACDD3652874620B005B083B /* ViewModels */ = {
@@ -230,6 +233,7 @@
 				DACDD314287301E1005B083B /* RemoveDeviceView.swift in Sources */,
 				DACDD36428745E4D005B083B /* Device.swift in Sources */,
 				DA6E862C287284B300094C87 /* IMSApp.swift in Sources */,
+				DA278BAA287480930077956C /* RegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
