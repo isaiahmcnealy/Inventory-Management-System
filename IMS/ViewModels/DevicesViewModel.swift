@@ -14,6 +14,7 @@ class DevicesViewModel: ObservableObject {
     // get default firestore instance
     private var db = Firestore.firestore()
     
+    // gets list of devices
     func fetchData(){
         db.collection("devices").addSnapshotListener{ (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {

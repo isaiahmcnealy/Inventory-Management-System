@@ -65,8 +65,8 @@
 		DA6E861F287284B300094C87 = {
 			isa = PBXGroup;
 			children = (
-				DA278BA728747CC20077956C /* GoogleService-Info.plist */,
 				DA6E862A287284B300094C87 /* IMS */,
+				DA278BA728747CC20077956C /* GoogleService-Info.plist */,
 				DA6E8629287284B300094C87 /* Products */,
 			);
 			sourceTree = "<group>";
