@@ -171,7 +171,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 
-Isaiah McNealy - [@isaiah_mcnealy](https://twitter.com/isaiah_mcnealy) - i-mcnealy@outlook.com
+Isaiah McNealy - [@isaiah_mcnealy](https://twitter.com/isaiah_mcnealy) - imcnealy@icloud.com
 
 Project Link: [https://github.com/isaiahmcnealy/Inventory-Management-System](https://github.com/isaiahmcnealy/Inventory-Management-System)
 
