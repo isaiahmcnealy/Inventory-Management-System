@@ -14,6 +14,7 @@ struct Device: Identifiable {
     var inStock: Bool
     var lastModified: String
     var modifiedBy: String
+    var note: String
 }
 
 

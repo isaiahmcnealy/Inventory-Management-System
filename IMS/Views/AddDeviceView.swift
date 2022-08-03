@@ -16,24 +16,26 @@ struct AddDeviceView: View {
     
     @State var deviceName: String = ""
     @State var deviceSerialNumber: String = ""
+    @State var note: String = ""
     
     var body: some View {
 
         VStack{
             Text("Add Device")
                 .font(.title)
+        
             Form {
-                TextField(text: $deviceName) {
-                    Text("Device Name")
+                
+                Section(header: Text("Add Device")){
+                    TextField("Device Name", text: $deviceName)
+                    TextField("Device Serial #", text: $deviceSerialNumber)
+                    TextField("Note", text: $note)
                 }
-                TextField(text: $deviceSerialNumber) {
-                    Text("Device Serial #")
+                
+                Section {
+                    Button("Add Device", action: btnAddDevice)
                 }
             }
-    
-            Button("Add Device", action: btnAddDevice)
-                .buttonStyle(.borderedProminent)
-           
         }
         
     }
@@ -45,10 +47,11 @@ struct AddDeviceView: View {
             print("Error: Device name and serial number are required. Please try again")
             return
         } else {
-            self.viewModel.writeData(deviceName: deviceName, deviceSerial: deviceSerialNumber)
+            self.viewModel.addNewDevice(deviceName: deviceName, deviceSerial: deviceSerialNumber, note: note)
             // clear fields
             deviceName = ""
             deviceSerialNumber = ""
+            note = ""
         }
     }
 

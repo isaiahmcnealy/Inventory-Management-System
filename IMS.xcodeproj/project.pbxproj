@@ -12,6 +12,7 @@
 		DA278BA628747A070077956C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DA278BA528747A070077956C /* FirebaseFirestore */; };
 		DA278BA828747CC30077956C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA278BA728747CC20077956C /* GoogleService-Info.plist */; };
 		DA278BAA287480930077956C /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA278BA9287480930077956C /* RegistrationView.swift */; };
+		DA278BAC2874F8F90077956C /* SignOnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA278BAB2874F8F90077956C /* SignOnView.swift */; };
 		DA6E862C287284B300094C87 /* IMSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E862B287284B300094C87 /* IMSApp.swift */; };
 		DA6E862E287284B300094C87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6E862D287284B300094C87 /* ContentView.swift */; };
 		DA6E8630287284B300094C87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6E862F287284B300094C87 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		DA278BA728747CC20077956C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DA278BA9287480930077956C /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		DA278BAB2874F8F90077956C /* SignOnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOnView.swift; sourceTree = "<group>"; };
 		DA6E8628287284B300094C87 /* IMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6E862B287284B300094C87 /* IMSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMSApp.swift; sourceTree = "<group>"; };
 		DA6E862D287284B300094C87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				DACDD313287301E1005B083B /* RemoveDeviceView.swift */,
 				DACDD31528730206005B083B /* CheckoutDeviceView.swift */,
 				DA278BA9287480930077956C /* RegistrationView.swift */,
+				DA278BAB2874F8F90077956C /* SignOnView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DACDD3672874623E005B083B /* DevicesViewModel.swift in Sources */,
+				DA278BAC2874F8F90077956C /* SignOnView.swift in Sources */,
 				DACDD312287301CA005B083B /* AddDeviceView.swift in Sources */,
 				DACDD31628730206005B083B /* CheckoutDeviceView.swift in Sources */,
 				DA6E862E287284B300094C87 /* ContentView.swift in Sources */,
@@ -381,7 +385,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -412,7 +416,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
