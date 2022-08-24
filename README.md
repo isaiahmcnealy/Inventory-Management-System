@@ -142,6 +142,7 @@ _For more examples, please refer to the [Documentation](http://isaiahmcnealy.com
 - [ ] Create GIF walkthrough video
 - [ ] Update documentation and readme
 - [ ] Create project landing page
+- [ ] Add ability to print CSV File of all devices
 
 
 See the [open issues](https://github.com/isaiahmcnealy/Inventory-Management-System.git) for a full list of proposed features (and known issues).
