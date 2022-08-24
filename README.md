@@ -139,8 +139,10 @@ _For more examples, please refer to the [Documentation](http://isaiahmcnealy.com
 - [ ] Add ability to register
 - [ ] Add ability to sign in
 - [ ] Add ability to sign out
+- [ ] Create GIF walkthrough video
 - [ ] Update documentation and readme
-- [ ] Create project details page
+- [ ] Create project landing page
+
 
 See the [open issues](https://github.com/isaiahmcnealy/Inventory-Management-System.git) for a full list of proposed features (and known issues).
 
