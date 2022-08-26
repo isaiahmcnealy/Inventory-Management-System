@@ -27,12 +27,13 @@ class DevicesViewModel: ObservableObject {
                 
                 let deviceName = data["deviceName"] as? String ?? ""
                 let deviceSerialNumber = data["deviceSerialNumber"] as? String ?? ""
+                let deviceVersion = data["deviceVersion"] as? String ?? ""
                 let inStock = data["inStock"] as? Bool ?? false
                 let lastModified = data["lastModified"] as? String ?? ""
                 let modifiedBy = data["modifiedBy"] as? String ?? ""
                 let note = data["note"] as? String ?? ""
                 
-                return Device(deviceName: deviceName, deviceSerialNumber: deviceSerialNumber, inStock: inStock, lastModified: lastModified, modifiedBy: modifiedBy, note: note)
+                return Device(deviceName: deviceName, deviceSerialNumber: deviceSerialNumber, deviceVersion: deviceVersion, inStock: inStock, lastModified: lastModified, modifiedBy: modifiedBy, note: note)
 
             }
         }
