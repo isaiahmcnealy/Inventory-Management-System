@@ -27,28 +27,52 @@ class DevicesViewModel: ObservableObject {
                 
                 let deviceName = data["deviceName"] as? String ?? ""
                 let deviceSerialNumber = data["deviceSerialNumber"] as? String ?? ""
+                let deviceVersion = data["deviceVersion"] as? String ?? ""
                 let inStock = data["inStock"] as? Bool ?? false
                 let lastModified = data["lastModified"] as? String ?? ""
                 let modifiedBy = data["modifiedBy"] as? String ?? ""
+                let note = data["note"] as? String ?? ""
                 
-                return Device(deviceName: deviceName, deviceSerialNumber: deviceSerialNumber, inStock: inStock, lastModified: lastModified, modifiedBy: modifiedBy)
+                return Device(deviceName: deviceName, deviceSerialNumber: deviceSerialNumber, deviceVersion: deviceVersion, inStock: inStock, lastModified: lastModified, modifiedBy: modifiedBy, note: note)
 
             }
         }
     }
     
-    func writeData(deviceName: String, deviceSerial: String){
+    func writeData(deviceName: String, deviceSerial: String, note: String){
         
         let deviceData: [String: Any] = [
             "deviceName" : deviceName,
             "deviceSerialNumber" : deviceSerial,
             "inStock" : true,
             "lastModified" : getCurrentTime(),
-            "modifiedBy" : "Isaiah McNealy"
-            
+            "modifiedBy" : "Isaiah McNealy",
+            "note" : note
         ]
         
         db.collection("devices").document(deviceSerial).setData(deviceData){ error in
+            if let error = error {
+                print("Error: there was a problem adding new device - \(error)")
+            } else {
+                // log that devices were added
+                print("Device Successfully Added\nDevice: \(deviceData)")
+            }
+        }
+    }
+    
+    func addNewDevice(deviceName: String, deviceSerial: String, note: String) {
+        
+        let deviceData: [String: Any] = [
+            "deviceName" : deviceName,
+            "deviceSerialNumber" : deviceSerial,
+            "inStock" : true,
+            "lastModified" : getCurrentTime(),
+            "modifiedBy" : "Isaiah McNealy",
+            "note" : note
+            
+        ]
+        
+        db.collection("devices").addDocument(data: deviceData) { error in
             if let error = error {
                 print("Error: there was a problem adding new device - \(error)")
             } else {

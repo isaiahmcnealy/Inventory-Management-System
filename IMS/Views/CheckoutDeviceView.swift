@@ -16,7 +16,9 @@ struct CheckoutDeviceView: View {
     var body: some View {
        
         List(viewModel.devices) { device in
-            DeviceRow(device: device)
+            NavigationLink(destination: DeviceDetailView(device: device)) {
+                DeviceRow(device: device)
+            }
         }
         .onAppear(){
             self.viewModel.fetchData()
