@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import SwiftUI
 
 class DevicesViewModel: ObservableObject {
     @Published var devices = [Device]()
@@ -25,6 +26,7 @@ class DevicesViewModel: ObservableObject {
             self.devices = documents.map { (QueryDocumentSnapshot) -> Device in
                 let data = QueryDocumentSnapshot.data()
                 
+                let deviceID = data["deviceID"] as? String ?? ""
                 let deviceName = data["deviceName"] as? String ?? ""
                 let deviceSerialNumber = data["deviceSerialNumber"] as? String ?? ""
                 let deviceVersion = data["deviceVersion"] as? String ?? ""
@@ -33,24 +35,52 @@ class DevicesViewModel: ObservableObject {
                 let modifiedBy = data["modifiedBy"] as? String ?? ""
                 let note = data["note"] as? String ?? ""
                 
-                return Device(deviceName: deviceName, deviceSerialNumber: deviceSerialNumber, deviceVersion: deviceVersion, inStock: inStock, lastModified: lastModified, modifiedBy: modifiedBy, note: note)
+                return Device(deviceID: deviceID, deviceName: deviceName, deviceSerialNumber: deviceSerialNumber, deviceVersion: deviceVersion, inStock: inStock, lastModified: lastModified, modifiedBy: modifiedBy, note: note)
 
             }
         }
     }
     
-    func writeData(deviceName: String, deviceSerial: String, note: String){
+    
+    func checkoutDevice(deviceID: String) {
+        db.collection("devices").document(deviceID).updateData([
+            "inStock" : false,
+            "lastModified" : getCurrentTime()
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
+    }
+    
+    func returnDevice(deviceID: String) {
+        db.collection("devices").document(deviceID).updateData([
+            "inStock" : true,
+            "lastModified" : getCurrentTime()
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
+    }
+    
+    // updates existing device information
+    func updateData(deviceID: String, deviceName: String, deviceSerial: String, note: String, inStock: Bool){
         
         let deviceData: [String: Any] = [
             "deviceName" : deviceName,
             "deviceSerialNumber" : deviceSerial,
-            "inStock" : true,
+            "inStock" : inStock,
             "lastModified" : getCurrentTime(),
             "modifiedBy" : "Isaiah McNealy",
             "note" : note
         ]
-        
-        db.collection("devices").document(deviceSerial).setData(deviceData){ error in
+    
+        db.collection("devices").document(deviceID).setData(deviceData){ error in
             if let error = error {
                 print("Error: there was a problem adding new device - \(error)")
             } else {
@@ -60,11 +90,17 @@ class DevicesViewModel: ObservableObject {
         }
     }
     
-    func addNewDevice(deviceName: String, deviceSerial: String, note: String) {
+    /**
+     * Function adds new device to firestore
+     */
+    func addNewDevice(deviceID: String, deviceName: String, deviceSerial: String, note: String, deviceVersion: String) {
         
         let deviceData: [String: Any] = [
+            // get device ID
+            "deviceID" : deviceID,
             "deviceName" : deviceName,
             "deviceSerialNumber" : deviceSerial,
+            "deviceVersion" : deviceVersion,
             "inStock" : true,
             "lastModified" : getCurrentTime(),
             "modifiedBy" : "Isaiah McNealy",
@@ -72,14 +108,17 @@ class DevicesViewModel: ObservableObject {
             
         ]
         
-        db.collection("devices").addDocument(data: deviceData) { error in
-            if let error = error {
-                print("Error: there was a problem adding new device - \(error)")
+        
+        // Add a new document in collection "cities"
+        db.collection("devices").document(deviceID).setData(deviceData) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
             } else {
-                // log that devices were added
-                print("Device Successfully Added\nDevice: \(deviceData)")
+                print("Document successfully written!")
             }
         }
+        
+        
     }
     
     /**

@@ -13,6 +13,8 @@ struct CheckoutDeviceView: View {
     
     @ObservedObject private var viewModel = DevicesViewModel()
     
+//    @State var showingDetailView = false
+    
     var body: some View {
        
         List(viewModel.devices) { device in

@@ -24,19 +24,27 @@ struct ContentView: View {
                 NavigationLink(destination: CheckoutDeviceView()){
                     Text("Checkout Device")
                 }
+                .background(Color.red)
+                .foregroundColor(Color.white)
                 
                 NavigationLink(destination: AddDeviceView()){
                     Text("Add Device")
                 }
+                .background(Color.red)
+                .foregroundColor(Color.white)
                 
                 NavigationLink(destination: RemoveDeviceView()){
                     Text("Remove Device")
                 }
+                .background(Color.red)
+                .foregroundColor(Color.white)
             }
-            .buttonStyle(.borderedProminent)
+            .buttonStyle(.bordered)
             .padding()
             .frame(width: 250, height: 50, alignment: .center)
+            
         }
+        
         
         
         
