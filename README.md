@@ -86,6 +86,7 @@ This is an iOS mobile application made to improve the accuracy and effeciency of
 ### Built With
 
 * [Swift](https://developer.apple.com/swift/)
+* [FireStore](https://firebase.google.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -143,6 +144,8 @@ _For more examples, please refer to the [Documentation](http://isaiahmcnealy.com
 - [ ] Update documentation and readme
 - [ ] Create project landing page
 - [ ] Add ability to print CSV File of all devices
+- [ ] Support QR code scanning: Pull up device information
+- [ ] Support QR code scanning: Check in / Check out options on device details page
 
 
 See the [open issues](https://github.com/isaiahmcnealy/Inventory-Management-System.git) for a full list of proposed features (and known issues).
@@ -166,8 +169,6 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 
 
