@@ -17,6 +17,7 @@ struct AddDeviceView: View {
     @State var deviceName: String = ""
     @State var deviceSerialNumber: String = ""
     @State var note: String = ""
+    @State var deviceVersion: String = ""
     
     var body: some View {
 
@@ -29,6 +30,7 @@ struct AddDeviceView: View {
                 Section(header: Text("Add Device")){
                     TextField("Device Name", text: $deviceName)
                     TextField("Device Serial #", text: $deviceSerialNumber)
+                    TextField("Device OS Version", text: $deviceVersion)
                     TextField("Note", text: $note)
                 }
                 
@@ -43,14 +45,16 @@ struct AddDeviceView: View {
     func btnAddDevice() {
     
         // check if text fields are empty
-        if (deviceName == "" || deviceSerialNumber == ""){
-            print("Error: Device name and serial number are required. Please try again")
+        if (deviceName == "" || deviceSerialNumber == "" || deviceVersion == ""){
+            print("Error: Device name, serial number, and OS version are required. Please try again")
             return
         } else {
-            self.viewModel.addNewDevice(deviceName: deviceName, deviceSerial: deviceSerialNumber, note: note)
+            self.viewModel.addNewDevice(deviceID: UUID().uuidString, deviceName: deviceName, deviceSerial: deviceSerialNumber, note: note, deviceVersion: deviceVersion)
+            
             // clear fields
             deviceName = ""
             deviceSerialNumber = ""
+            deviceVersion = ""
             note = ""
         }
     }
