@@ -25,6 +25,7 @@ class DevicesViewModel: ObservableObject {
             self.devices = documents.map { (QueryDocumentSnapshot) -> Device in
                 let data = QueryDocumentSnapshot.data()
                 
+                let deviceID = data["deviceID"] as? String ?? ""
                 let deviceName = data["deviceName"] as? String ?? ""
                 let deviceSerialNumber = data["deviceSerialNumber"] as? String ?? ""
                 let deviceVersion = data["deviceVersion"] as? String ?? ""
@@ -33,11 +34,12 @@ class DevicesViewModel: ObservableObject {
                 let modifiedBy = data["modifiedBy"] as? String ?? ""
                 let note = data["note"] as? String ?? ""
                 
-                return Device(deviceName: deviceName, deviceSerialNumber: deviceSerialNumber, deviceVersion: deviceVersion, inStock: inStock, lastModified: lastModified, modifiedBy: modifiedBy, note: note)
+                return Device(deviceID: deviceID, deviceName: deviceName, deviceSerialNumber: deviceSerialNumber, deviceVersion: deviceVersion, inStock: inStock, lastModified: lastModified, modifiedBy: modifiedBy, note: note)
 
             }
         }
     }
+    
     
     func writeData(deviceName: String, deviceSerial: String, note: String){
         
@@ -60,9 +62,29 @@ class DevicesViewModel: ObservableObject {
         }
     }
     
+    
+    func updateDeviceStatus(deviceID: String, deviceStatus: Bool) {
+        
+        let deviceRef = db.collection("devices").document(deviceID)
+        
+        deviceRef.updateData(["inStock": deviceStatus]) { error in
+                if let error = error {
+                    print("Error updating document: \(error)")
+                } else {
+                    print("Document successfully updated!")
+                }
+            }
+    }
+    
+    /**
+     * Function sets new document to device firestore collection
+     */
     func addNewDevice(deviceName: String, deviceSerial: String, note: String) {
         
+        let deviceID = deviceName + "-" + deviceSerial
+        
         let deviceData: [String: Any] = [
+            "deviceID" : deviceID,
             "deviceName" : deviceName,
             "deviceSerialNumber" : deviceSerial,
             "inStock" : true,
@@ -72,7 +94,10 @@ class DevicesViewModel: ObservableObject {
             
         ]
         
-        db.collection("devices").addDocument(data: deviceData) { error in
+        db.collection("devices").document(deviceID).setData(deviceData) { error in
+            
+            if(d)
+            
             if let error = error {
                 print("Error: there was a problem adding new device - \(error)")
             } else {
