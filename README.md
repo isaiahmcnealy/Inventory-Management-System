@@ -137,15 +137,18 @@ _For more examples, please refer to the [Documentation](http://isaiahmcnealy.com
 - [ ] Add ability to checkout device
 - [ ] Add ability to check in device
 - [ ] Add ability to remove device from inventory
+- [ ] Update device details view to match inventory spreadsheet
 - [ ] Add ability to register
 - [ ] Add ability to sign in
 - [ ] Add ability to sign out
 - [ ] Create GIF walkthrough video
 - [ ] Update documentation and readme
 - [ ] Create project landing page
+- [ ] Add ability to upload csv file to update firestore db
 - [ ] Add ability to print CSV File of all devices
 - [ ] Support QR code scanning: Pull up device information
 - [ ] Support QR code scanning: Check in / Check out options on device details page
+- [ ] Check if device is already in firestore db
 
 
 See the [open issues](https://github.com/isaiahmcnealy/Inventory-Management-System.git) for a full list of proposed features (and known issues).
