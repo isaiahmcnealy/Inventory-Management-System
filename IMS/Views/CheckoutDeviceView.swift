@@ -36,7 +36,7 @@ struct DeviceRow: View {
     var body: some View {
         HStack{
             VStack(alignment: .leading){
-                Text(device.deviceName)
+                Text(device.deviceModel)
                 Text(device.deviceVersion).font(.footnote)
                 Text(device.deviceSerialNumber).font(.subheadline).foregroundColor(.gray)
             }

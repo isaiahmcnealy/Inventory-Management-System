@@ -22,7 +22,6 @@
 		DA8E275D287478C400C3186D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DA8E275C287478C400C3186D /* FirebaseFirestore */; };
 		DAB484B128B9075900317369 /* DeviceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB484B028B9075900317369 /* DeviceDetailView.swift */; };
 		DACDD312287301CA005B083B /* AddDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACDD311287301CA005B083B /* AddDeviceView.swift */; };
-		DACDD314287301E1005B083B /* RemoveDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACDD313287301E1005B083B /* RemoveDeviceView.swift */; };
 		DACDD31628730206005B083B /* CheckoutDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACDD31528730206005B083B /* CheckoutDeviceView.swift */; };
 		DACDD35928731C51005B083B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = DACDD35828731C51005B083B /* FirebaseAnalytics */; };
 		DACDD35B28731C51005B083B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = DACDD35A28731C51005B083B /* FirebaseFirestore */; };
@@ -42,7 +41,6 @@
 		DA6E8632287284B300094C87 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DAB484B028B9075900317369 /* DeviceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailView.swift; sourceTree = "<group>"; };
 		DACDD311287301CA005B083B /* AddDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDeviceView.swift; sourceTree = "<group>"; };
-		DACDD313287301E1005B083B /* RemoveDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveDeviceView.swift; sourceTree = "<group>"; };
 		DACDD31528730206005B083B /* CheckoutDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutDeviceView.swift; sourceTree = "<group>"; };
 		DACDD36328745E4D005B083B /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		DACDD3662874623E005B083B /* DevicesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicesViewModel.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 			children = (
 				DA6E862D287284B300094C87 /* ContentView.swift */,
 				DACDD311287301CA005B083B /* AddDeviceView.swift */,
-				DACDD313287301E1005B083B /* RemoveDeviceView.swift */,
 				DACDD31528730206005B083B /* CheckoutDeviceView.swift */,
 				DA278BA9287480930077956C /* RegistrationView.swift */,
 				DA278BAB2874F8F90077956C /* SignOnView.swift */,
@@ -238,7 +235,6 @@
 				DACDD312287301CA005B083B /* AddDeviceView.swift in Sources */,
 				DACDD31628730206005B083B /* CheckoutDeviceView.swift in Sources */,
 				DA6E862E287284B300094C87 /* ContentView.swift in Sources */,
-				DACDD314287301E1005B083B /* RemoveDeviceView.swift in Sources */,
 				DACDD36428745E4D005B083B /* Device.swift in Sources */,
 				DA6E862C287284B300094C87 /* IMSApp.swift in Sources */,
 				DA278BAA287480930077956C /* RegistrationView.swift in Sources */,

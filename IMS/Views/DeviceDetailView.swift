@@ -17,16 +17,19 @@ struct DeviceDetailView: View {
     
     var body: some View {
         List{
-            Text("Device Name: " + device.deviceName)
-            Text("Status:  \(device.inStock ? "instock" : "checked out")")
-            Text("Serial Number: " + device.deviceSerialNumber)
-            Text("OS Version: " + device.deviceVersion)
-            Text("Modified By: " + device.modifiedBy)
+            Group {
+                Text("Device Model: " + device.deviceModel)
+                Text("Device Manufacturer: " + device.deviceManufacturer)
+                Text("Serial Number: " + device.deviceSerialNumber)
+                Text("Model Number: " + device.deviceModelNumber)
+                Text("Operating System: " + device.deviceOS)
+                Text("OS Version: " + device.deviceVersion)
+                Text("Availability:  \(device.inStock ? "instock" : "checked out")")
+            }
+            Text("Device ID: " + device.deviceID)
             Text("Last Modified: " + device.lastModified)
-            Spacer()
-                .frame(height: 10)
-            Text("notes: " + device.note.prefix(200))
-            
+            Text("Modified By: " + device.modifiedBy)
+            Text("Notes: " + device.note.prefix(200))
         }
         Button(device.inStock ? "Checkout" : "Return"){
             btn_checkoutDevice(device: device)

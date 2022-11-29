@@ -28,21 +28,36 @@ class DevicesViewModel: ObservableObject {
                 
                 let deviceUID = data["deviceUID"] as? String ?? ""
                 let deviceID = data["deviceID"] as? String ?? ""
-                let deviceName = data["deviceName"] as? String ?? ""
+                let deviceModel = data["deviceModel"] as? String ?? ""
+                let deviceManufacturer = data["deviceManufacturer"] as? String ?? ""
+                let deviceOS = data["deviceOS"] as? String ?? ""
                 let deviceSerialNumber = data["deviceSerialNumber"] as? String ?? ""
+                let deviceModelNumber = data["deviceModelNumber"] as? String ?? ""
                 let deviceVersion = data["deviceVersion"] as? String ?? ""
                 let inStock = data["inStock"] as? Bool ?? false
                 let lastModified = data["lastModified"] as? String ?? ""
                 let modifiedBy = data["modifiedBy"] as? String ?? ""
                 let note = data["note"] as? String ?? ""
                 
-                return Device(deviceUID: deviceUID, deviceID: deviceID, deviceName: deviceName, deviceSerialNumber: deviceSerialNumber, deviceVersion: deviceVersion, inStock: inStock, lastModified: lastModified, modifiedBy: modifiedBy, note: note)
+                return Device(
+                    deviceUID: deviceUID,
+                    deviceID: deviceID,
+                    deviceModel: deviceModel,
+                    deviceManufacturer: deviceManufacturer,
+                    deviceOS: deviceOS,
+                    deviceSerialNumber: deviceSerialNumber,
+                    deviceModelNumber: deviceModelNumber,
+                    deviceVersion: deviceVersion,
+                    inStock: inStock,
+                    lastModified: lastModified,
+                    modifiedBy: modifiedBy,
+                    note: note)
 
             }
         }
     }
     
-    
+    // function: changes device status to checked out
     func checkoutDevice(deviceID: String) {
         db.collection("devices").document(deviceID).updateData([
             "inStock" : false,
@@ -56,6 +71,7 @@ class DevicesViewModel: ObservableObject {
         }
     }
     
+    // function: changes device status to instock
     func returnDevice(deviceID: String) {
         db.collection("devices").document(deviceID).updateData([
             "inStock" : true,
@@ -69,11 +85,12 @@ class DevicesViewModel: ObservableObject {
         }
     }
     
-    // updates existing device information
-    func updateData(deviceID: String, deviceName: String, deviceSerial: String, note: String, inStock: Bool){
+    // function: updates entire document
+    //TODO: update function to update all fields entered
+    func updateData(deviceID: String, deviceModel: String, deviceSerial: String, note: String, inStock: Bool){
         
         let deviceData: [String: Any] = [
-            "deviceName" : deviceName,
+            "deviceModel" : deviceModel,
             "deviceSerialNumber" : deviceSerial,
             "inStock" : inStock,
             "lastModified" : getCurrentTime(),
@@ -91,19 +108,29 @@ class DevicesViewModel: ObservableObject {
         }
     }
     
-    /**
-     * Function adds new device to firestore
-     */
-    func addNewDevice(deviceUID: String, deviceName: String, deviceSerial: String, note: String, deviceVersion: String) {
+    // function: Add new device to firestore
+    
+    func addNewDevice(
+        deviceUID: String,
+        deviceModel: String,
+        deviceManufacturer: String,
+        deviceSerialNumber: String,
+        deviceModelNumber: String,
+        deviceOS: String,
+        deviceVersion: String,
+        note: String) {
         
-        let deviceID = deviceName + " - " + deviceSerial
+        let deviceID = deviceModel + " - " + deviceSerialNumber
         
         let deviceData: [String: Any] = [
             // get device ID
             "deviceUID" : deviceUID,
             "deviceID" : deviceID,
-            "deviceName" : deviceName,
-            "deviceSerialNumber" : deviceSerial,
+            "deviceModel" : deviceModel,
+            "deviceManufacturer" : deviceManufacturer,
+            "deviceSerialNumber" : deviceSerialNumber,
+            "deviceModelNumber" : deviceModelNumber,
+            "deviceOS" : deviceOS,
             "deviceVersion" : deviceVersion,
             "inStock" : true,
             "lastModified" : getCurrentTime(),

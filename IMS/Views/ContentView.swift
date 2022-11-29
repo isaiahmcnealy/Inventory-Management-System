@@ -29,11 +29,6 @@ struct ContentView: View {
                 }
                 .buttonStyle(PrimaryButtonStyle())
                 
-                NavigationLink(destination: RemoveDeviceView()){
-                    Text("Remove Device")
-                }
-                .buttonStyle(PrimaryButtonStyle())
-
             }
         }
     }
