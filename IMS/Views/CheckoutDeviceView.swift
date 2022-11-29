@@ -13,8 +13,6 @@ struct CheckoutDeviceView: View {
     
     @ObservedObject private var viewModel = DevicesViewModel()
     
-//    @State var showingDetailView = false
-    
     var body: some View {
        
         List(viewModel.devices) { device in
@@ -25,11 +23,8 @@ struct CheckoutDeviceView: View {
         .onAppear(){
             self.viewModel.fetchData()
         }
-        
     }
 }
-
-
 
 struct DeviceRow: View {
     var device: Device
@@ -37,7 +32,7 @@ struct DeviceRow: View {
         HStack{
             VStack(alignment: .leading){
                 Text(device.deviceModel)
-                Text(device.deviceVersion).font(.footnote)
+                Text(device.deviceOS + " " + device.deviceVersion).font(.footnote)
                 Text(device.deviceSerialNumber).font(.subheadline).foregroundColor(.gray)
             }
             Spacer()
