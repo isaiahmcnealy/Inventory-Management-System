@@ -81,6 +81,8 @@
 This is an iOS mobile application made to improve the accuracy and effeciency of managing the inventory of devices used in a test lab. 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Walkthrough
+![](https://github.com/isaiahmcnealy/Inventory-Management-System/blob/develop/IMS_v1.0_gif.gif)
 
 
 ### Built With
