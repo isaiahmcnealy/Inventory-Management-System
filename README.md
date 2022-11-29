@@ -137,7 +137,7 @@ _For more examples, please refer to the [Documentation](http://isaiahmcnealy.com
 - [x] Add ability to checkout device
 - [x] Add ability to check in device
 - [ ] Add ability to remove device from inventory
-- [ ] Update device details view to match inventory spreadsheet
+- [x] Update device details view to match inventory spreadsheet
 - [ ] Add ability to register
 - [ ] Add ability to sign in
 - [ ] Add ability to sign out
