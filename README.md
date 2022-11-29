@@ -36,7 +36,7 @@
     <a href="https://github.com/isaiahmcnealy/Inventory-Management-System"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/isaiahmcnealy/Inventory-Management-System">View Demo</a>
+    <a href="https://github.com/isaiahmcnealy/Inventory-Management-System/blob/develop/IMS_v1.0_gif.gif">View Demo</a>
     ·
     <a href="https://github.com/isaiahmcnealy/Inventory-Management-System/issues/new">Report Bug</a>
     ·
