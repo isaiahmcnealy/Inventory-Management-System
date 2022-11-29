@@ -96,8 +96,6 @@ class DevicesViewModel: ObservableObject {
         
         db.collection("devices").document(deviceID).setData(deviceData) { error in
             
-            if(d)
-            
             if let error = error {
                 print("Error: there was a problem adding new device - \(error)")
             } else {
