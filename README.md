@@ -143,8 +143,8 @@ _For more examples, please refer to the [Documentation](http://isaiahmcnealy.com
 - [ ] Add ability to register
 - [ ] Add ability to sign in
 - [ ] Add ability to sign out
-- [ ] Create GIF walkthrough video
-- [ ] Update documentation and readme
+- [x] Create GIF walkthrough video
+- [x] Update documentation and readme
 - [ ] Create project landing page
 - [ ] Add ability to upload csv file to update firestore db
 - [ ] Add ability to print CSV File of all devices
