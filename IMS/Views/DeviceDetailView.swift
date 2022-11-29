@@ -31,10 +31,7 @@ struct DeviceDetailView: View {
         Button(device.inStock ? "Checkout" : "Return"){
             btn_checkoutDevice(device: device)
         }
-        .padding()
-        .background(Color.red)
-        .foregroundColor(Color.white)
-        .clipShape(Capsule())
+        .buttonStyle(PrimaryButtonStyle())
         
     }
     

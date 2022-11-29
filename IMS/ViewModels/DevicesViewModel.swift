@@ -26,6 +26,7 @@ class DevicesViewModel: ObservableObject {
             self.devices = documents.map { (QueryDocumentSnapshot) -> Device in
                 let data = QueryDocumentSnapshot.data()
                 
+                let deviceUID = data["deviceUID"] as? String ?? ""
                 let deviceID = data["deviceID"] as? String ?? ""
                 let deviceName = data["deviceName"] as? String ?? ""
                 let deviceSerialNumber = data["deviceSerialNumber"] as? String ?? ""
@@ -35,7 +36,7 @@ class DevicesViewModel: ObservableObject {
                 let modifiedBy = data["modifiedBy"] as? String ?? ""
                 let note = data["note"] as? String ?? ""
                 
-                return Device(deviceID: deviceID, deviceName: deviceName, deviceSerialNumber: deviceSerialNumber, deviceVersion: deviceVersion, inStock: inStock, lastModified: lastModified, modifiedBy: modifiedBy, note: note)
+                return Device(deviceUID: deviceUID, deviceID: deviceID, deviceName: deviceName, deviceSerialNumber: deviceSerialNumber, deviceVersion: deviceVersion, inStock: inStock, lastModified: lastModified, modifiedBy: modifiedBy, note: note)
 
             }
         }
@@ -93,10 +94,13 @@ class DevicesViewModel: ObservableObject {
     /**
      * Function adds new device to firestore
      */
-    func addNewDevice(deviceID: String, deviceName: String, deviceSerial: String, note: String, deviceVersion: String) {
+    func addNewDevice(deviceUID: String, deviceName: String, deviceSerial: String, note: String, deviceVersion: String) {
+        
+        let deviceID = deviceName + " - " + deviceSerial
         
         let deviceData: [String: Any] = [
             // get device ID
+            "deviceUID" : deviceUID,
             "deviceID" : deviceID,
             "deviceName" : deviceName,
             "deviceSerialNumber" : deviceSerial,

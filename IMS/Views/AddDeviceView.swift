@@ -49,7 +49,7 @@ struct AddDeviceView: View {
             print("Error: Device name, serial number, and OS version are required. Please try again")
             return
         } else {
-            self.viewModel.addNewDevice(deviceID: UUID().uuidString, deviceName: deviceName, deviceSerial: deviceSerialNumber, note: note, deviceVersion: deviceVersion)
+            self.viewModel.addNewDevice(deviceUID: UUID().uuidString, deviceName: deviceName, deviceSerial: deviceSerialNumber, note: note, deviceVersion: deviceVersion)
             
             // clear fields
             deviceName = ""

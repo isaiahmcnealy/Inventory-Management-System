@@ -37,6 +37,7 @@ struct DeviceRow: View {
         HStack{
             VStack(alignment: .leading){
                 Text(device.deviceName)
+                Text(device.deviceVersion).font(.footnote)
                 Text(device.deviceSerialNumber).font(.subheadline).foregroundColor(.gray)
             }
             Spacer()
