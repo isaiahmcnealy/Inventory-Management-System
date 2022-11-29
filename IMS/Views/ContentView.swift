@@ -18,8 +18,6 @@ struct ContentView: View {
                     .font(.title)
                 Text("Inventory Management")
                     .font(.headline)
-//
-//                Spacer()
                 
                 NavigationLink(destination: CheckoutDeviceView()){
                     Text("Checkout Device")
@@ -37,18 +35,8 @@ struct ContentView: View {
                 .buttonStyle(PrimaryButtonStyle())
 
             }
-            
-//            .buttonStyle(.bordered)
-//            .padding()
-//            .frame(width: 250, height: 50, alignment: .center)
-            
         }
-        
-        
-        
-        
     }
-    
 }
 
 struct PrimaryButtonStyle: ButtonStyle {
