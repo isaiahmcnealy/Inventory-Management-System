@@ -21,6 +21,7 @@ struct Device: Identifiable {
     var lastModified: String        // date last modified
     var modifiedBy: String          // person modified by
     var note: String
+    var deviceType: String          // type of device
 }
 
 let devices = [
@@ -36,7 +37,8 @@ let devices = [
         inStock: true,
         lastModified: "",
         modifiedBy: "Isaiah McNealy",
-        note: ""
+        note: "",
+        deviceType: "phone"
     ),
     Device(
         deviceUID: "",
@@ -50,7 +52,8 @@ let devices = [
         inStock: true,
         lastModified: "",
         modifiedBy: "Isaiah McNealy",
-        note: ""
+        note: "",
+        deviceType: "phone"
     ),
     Device(
         deviceUID: "",
@@ -64,7 +67,8 @@ let devices = [
         inStock: true,
         lastModified: "",
         modifiedBy: "Isaiah McNealy",
-        note: ""
+        note: "",
+        deviceType: "phone"
     ),
 ]
 

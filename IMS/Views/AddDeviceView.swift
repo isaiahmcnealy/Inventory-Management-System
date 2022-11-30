@@ -21,9 +21,10 @@ struct AddDeviceView: View {
     @State var deviceSerialNumber: String = ""
     @State var deviceModelNumber: String = ""
     @State var note: String = ""
+    @State var deviceType: String = ""
     
     @State var presentAlert = false
-    
+    let alertTitle = "Input Error"
     
     var body: some View {
 
@@ -41,15 +42,20 @@ struct AddDeviceView: View {
                     TextField("Device OS: iOS", text: $deviceOS)
                     TextField("OS Version: 1234", text: $deviceVersion)
                     TextField("Note", text: $note)
+                    TextField("Device Type: phone", text: $deviceType)
                 }
         
                 Section {
                     Button("Add Device") {
                         btnAddDevice()
                     }
-                    .alert("Important message", isPresented: $presentAlert) {
+                    .alert( alertTitle, isPresented: $presentAlert) {
                         Button("OK", role: .cancel) { }
+                    } message: {
+                        Text("Device model, type, manufacturer, and operating system and version are required. Please try again")
                     }
+                    
+                    
                 }
             }
         }
@@ -58,8 +64,8 @@ struct AddDeviceView: View {
     func btnAddDevice() {
         
         // check if text fields are empty
-        if (deviceModel == "" || deviceManufacturer == "" || deviceVersion == "" || deviceOS == ""){
-            print("Error: Device model, serial manufacturer, device operating system and OS version are required. Please try again")
+        if (deviceModel == "" || deviceManufacturer == "" || deviceVersion == "" || deviceOS == "" || deviceType == ""){
+            print("Error: Device model, type, manufacturer, and operating system and version are required. Please try again")
             presentAlert = true
             return
         } else {
@@ -71,7 +77,8 @@ struct AddDeviceView: View {
                 deviceModelNumber: deviceModelNumber,
                 deviceOS: deviceOS,
                 deviceVersion: deviceVersion,
-                note: note
+                note: note,
+                deviceType: deviceType
             )
             
             // clear fields
@@ -82,6 +89,7 @@ struct AddDeviceView: View {
             deviceOS = ""
             deviceVersion = ""
             note = ""
+            deviceType = ""
         }
     }
 }

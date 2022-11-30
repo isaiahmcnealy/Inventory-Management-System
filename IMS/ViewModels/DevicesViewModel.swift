@@ -38,6 +38,7 @@ class DevicesViewModel: ObservableObject {
                 let lastModified = data["lastModified"] as? String ?? ""
                 let modifiedBy = data["modifiedBy"] as? String ?? ""
                 let note = data["note"] as? String ?? ""
+                let deviceType = data["deviceType"] as? String ?? ""
                 
                 return Device(
                     deviceUID: deviceUID,
@@ -51,7 +52,9 @@ class DevicesViewModel: ObservableObject {
                     inStock: inStock,
                     lastModified: lastModified,
                     modifiedBy: modifiedBy,
-                    note: note)
+                    note: note,
+                    deviceType: deviceType
+                )
 
             }
         }
@@ -118,7 +121,8 @@ class DevicesViewModel: ObservableObject {
         deviceModelNumber: String,
         deviceOS: String,
         deviceVersion: String,
-        note: String) {
+        note: String,
+        deviceType: String) {
         
         let deviceID = deviceModel + " - " + deviceSerialNumber
         
@@ -135,8 +139,8 @@ class DevicesViewModel: ObservableObject {
             "inStock" : true,
             "lastModified" : getCurrentTime(),
             "modifiedBy" : "Isaiah McNealy",
-            "note" : note
-            
+            "note" : note,
+            "deviceType" : deviceType
         ]
         
         

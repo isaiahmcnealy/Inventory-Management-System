@@ -18,6 +18,7 @@ struct DeviceDetailView: View {
     var body: some View {
         List{
             Group {
+                Text("Type: " + device.deviceType)
                 Text("Device Model: " + device.deviceModel)
                 Text("Device Manufacturer: " + device.deviceManufacturer)
                 Text("Serial Number: " + device.deviceSerialNumber)
